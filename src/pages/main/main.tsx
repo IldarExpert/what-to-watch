@@ -3,7 +3,7 @@ import Header from '../../components/header/header';
 import Footer from '../../components/footer/footer';
 import FilmList from '../../components/film-list/film-list';
 import {useDispatch, useSelector} from 'react-redux';
-import {fetchFilmList, fetchPromo} from '../../store/api-action';
+import {checkAuthStatus, fetchFilmList, fetchPromo} from '../../store/api-action';
 import {getFilmList, getIsLoading, getPromoFilm} from '../../store/data-reducer/selectors';
 import FilmCardButtons from '../../components/film-card-buttons/film-card-buttons';
 import FilmCatalog from '../../components/film-catalog/film-catalog';

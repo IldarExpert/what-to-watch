@@ -10,6 +10,7 @@ export enum ActionType {
   saveSimilarFilmsData = 'data/save_similar_films_data',
   saveComments = 'data/save_comments',
   savePromo = 'data/save_promo',
+  updateAuthStatus = 'user/update_auth_status'
 }
 
 export type ThunkActionResult<R = Promise<void>> = ThunkAction<R, State, AxiosInstance, Action>;

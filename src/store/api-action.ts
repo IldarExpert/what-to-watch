@@ -81,3 +81,17 @@ export const fetchPromo = (): ThunkActionResult => {
     }
   }
 }
+
+export const checkAuthStatus = (): ThunkActionResult => {
+  return async (dispatch, _getState, api) => {
+    try {
+      dispatch(updateLoadingStatus(true));
+      const {data} = await api.get<string>(ApiRoute.Login);
+      console.log(data);
+      dispatch(updateLoadingStatus(false));
+    } catch (e) {
+      console.log('error', e);
+      dispatch(updateLoadingStatus(false));
+    }
+  }
+}

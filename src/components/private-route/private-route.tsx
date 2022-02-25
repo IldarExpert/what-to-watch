@@ -3,7 +3,7 @@ import {Navigate} from 'react-router-dom';
 import {AppRoute, AuthStatus} from '../../consts';
 
 const PrivateRoute = ({children}: {children: JSX.Element}) => {
-  let auth = Math.random()< 0.999 ? AuthStatus.NoAuth : AuthStatus.Auth;
+  let auth = AuthStatus.Auth;
   console.log('auth', auth);
 
   if (auth !== AuthStatus.Auth) {

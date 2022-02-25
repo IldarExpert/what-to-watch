@@ -5,8 +5,10 @@ import {Provider} from 'react-redux';
 import {configureStore} from '@reduxjs/toolkit';
 import {rootReducer} from './store/root-reducer';
 import {createAPI} from './servises/api';
+import {updateAuthStatus} from './store/actions';
+import {AuthStatus} from './consts';
 
-const api = createAPI();
+const api = createAPI(() => store.dispatch(updateAuthStatus(AuthStatus.NoAuth)));
 
 const store = configureStore({
   reducer: rootReducer,

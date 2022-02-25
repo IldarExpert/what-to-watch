@@ -1,5 +1,5 @@
 import React from 'react';
-import {ConvertTime} from '../../servises/convert-time';
+import {convertTime} from '../../servises/convert-time';
 import {FilmData} from '../../types/film-data-from-server';
 
 interface FilmCardDetailsProps {
@@ -29,7 +29,7 @@ const FilmCardDetails = ({filmData}: FilmCardDetailsProps) => {
       <div className="film-card__text-col">
         <p className="film-card__details-item">
           <strong className="film-card__details-name">Run Time</strong>
-          <span className="film-card__details-value">{ConvertTime(filmData.runTime)}</span>
+          <span className="film-card__details-value">{convertTime(filmData.runTime)}</span>
         </p>
         <p className="film-card__details-item">
           <strong className="film-card__details-name">Genre</strong>

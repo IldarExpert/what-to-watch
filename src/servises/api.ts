@@ -4,7 +4,7 @@ import {getToken} from './token';
 
 const BACKEND_URL = 'https://9.react.pages.academy/wtw';
 
-export const createAPI = () => {
+export const createAPI = (onNoAuth: () => void) => {
   const api = axios.create({
     baseURL: BACKEND_URL,
     timeout: 5000,
@@ -30,7 +30,7 @@ export const createAPI = () => {
       const {response} = error;
 
       if(response.status === 401) {
-        console.log('добавь диспатч на не авторизован');
+        return onNoAuth();
       }
     return Promise.reject(error);
   });
