@@ -6,3 +6,4 @@ export const getFilm = (state: State) => state.data.film;
 export const getSimilarFilms = (state: State) => state.data.similarFilms;
 export const getComments = (state:State) => state.data.comments;
 export const getPromoFilm = (state: State) => state.data.promoFilm;
+export const getCommentsError = (state: State) => state.data.commentsError

@@ -5,6 +5,7 @@ export enum AppRoute {
   MoviePage = '/film/:id',
   OneMoviePage = '/film',
   AddReview = '/films/:id/review',
+  Films = '/films',
   PlayerShow = '/player',
   Player = '/player/:id',
 }
@@ -20,6 +21,8 @@ export const ApiRoute = {
   Comments: '/comments',
   Promo: '/promo',
   Login: '/login',
+  Logout: '/logout',
+  MyList: '/favorite',
 }
 
 export const FILM_PER_PAGE = 8;

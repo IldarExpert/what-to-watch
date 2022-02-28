@@ -7,6 +7,7 @@ import {rootReducer} from './store/root-reducer';
 import {createAPI} from './servises/api';
 import {updateAuthStatus} from './store/actions';
 import {AuthStatus} from './consts';
+import {checkAuthStatus} from './store/api-action';
 
 const api = createAPI(() => store.dispatch(updateAuthStatus(AuthStatus.NoAuth)));
 
@@ -19,6 +20,8 @@ const store = configureStore({
       },
     }),
 });
+
+store.dispatch(checkAuthStatus());
 
 ReactDOM.render(
   <React.StrictMode>

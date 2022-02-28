@@ -9,8 +9,12 @@ export enum ActionType {
   saveOneFilmData = 'data/save_one_film_data',
   saveSimilarFilmsData = 'data/save_similar_films_data',
   saveComments = 'data/save_comments',
+  saveReviewError = 'data/save_review_error',
   savePromo = 'data/save_promo',
-  updateAuthStatus = 'user/update_auth_status'
+  updateAuthStatus = 'user/update_auth_status',
+  saveUserData = 'user/save_user_data',
+  saveAuthErrorMassage = 'user/save_auth_error_massage',
+  updateMyList = 'user/update_my_list',
 }
 
 export type ThunkActionResult<R = Promise<void>> = ThunkAction<R, State, AxiosInstance, Action>;

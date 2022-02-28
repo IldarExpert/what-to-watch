@@ -3,7 +3,7 @@ import {
   saveComments,
   saveFilmData,
   saveOneFilmData,
-  savePromo,
+  savePromo, saveReviewError,
   saveSimilarFilmsData,
   updateLoadingStatus
 } from '../actions';
@@ -78,6 +78,7 @@ const initialState: DataReducerType = {
     "comment": "Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.",
     "date": "2019-05-08T14:13:56.569Z"
   }],
+  commentsError: null,
   promoFilm: {
     "id": 1,
     "name": "The Grand Budapest Hotel",
@@ -118,5 +119,8 @@ export const dataReducer = createReducer(initialState, (builder) => {
     })
     .addCase(savePromo, (state, action) => {
       state.promoFilm = action.payload;
+    })
+    .addCase(saveReviewError, (state, action) => {
+      state.commentsError = action.payload;
     })
 });

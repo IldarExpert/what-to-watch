@@ -72,15 +72,6 @@ const Player = () => {
 
   useEffect(() => {
     dispatch(fetchFilm(id));
-
-    console.log('videoIsPlay', videoIsPlay);
-    console.log('currentTime', currentTime);
-    console.log('timeLeft', timeLeft);
-    console.log('progress', progress);
-    console.log('capturePoint', capturePoint);
-    console.log('videoTag', videoTag);
-    console.log('videoTag.current?.duration', videoTag.current?.duration);
-
   }, []);
 
   useEffect(() => {
@@ -133,6 +124,7 @@ const Player = () => {
         poster={filmData.backgroundImage}
         onDurationChange={handleDurationChange}
         loop={false}
+        muted={false}
       />
 
       <button onClick={handleExitClick} type="button" className="player__exit">Exit</button>

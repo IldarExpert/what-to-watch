@@ -45,7 +45,7 @@ const MoviePage = () => {
                 <span className="film-card__year">{filmData.released}</span>
               </p>
 
-            <FilmCardButtons />
+            <FilmCardButtons filmData={filmData} />
             </div>
           </div>
         </div>
