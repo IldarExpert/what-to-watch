@@ -40,11 +40,11 @@ const FilmCardButtons = ({filmData}: FilmCardButtonsProps) => {
       </button>
       <button onClick={handleMyListButton} className="btn btn--list film-card__button" type="button">
         {filmData.isFavorite?
-          <svg viewBox="0 0 18 14" width="18" height="14">
+          <svg data-testid="inList" viewBox="0 0 18 14" width="18" height="14">
             <use xlinkHref="#in-list" />
           </svg>
           :
-          <svg viewBox="0 0 19 20" width="19" height="20">
+          <svg data-testid="add" viewBox="0 0 19 20" width="19" height="20">
             <use xlinkHref="#add"/>
           </svg>
         }

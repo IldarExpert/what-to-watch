@@ -6,12 +6,12 @@ export const convertTimePlayer = (seconds: number | undefined) => {
 
     minutes = minutes < 10? '0'+minutes : minutes;
     sec = sec < 10? '0' + sec : sec;
-    hour = hour < 10? '' + hour : hour;
+    hour = hour < 10? '0' + hour : hour;
 
     if (Number(hour) > 0) {
-    return seconds >=0? hour + ':' + minutes + ':' + sec: '-' + hour + ':' + minutes + ':' + sec;
+    return seconds >=0? hour + ':' + minutes + ':' + sec : '-' + hour + ':' + minutes + ':' + sec;
   }
-  return seconds >=0? minutes + ':' + sec: '-' + minutes + ':' + sec;
+  return seconds >=0? minutes + ':' + sec : '-' + minutes + ':' + sec;
   }
   return '00:00';
 }

@@ -104,6 +104,7 @@ const SignIn = () => {
                 placeholder="Email address"
                 name="user-email"
                 id="user-email"
+                data-testid = 'userEmail'
               />
               <label className="sign-in__label visually-hidden" htmlFor="user-email">Email address</label>
             </div>
@@ -117,6 +118,7 @@ const SignIn = () => {
                 name="user-password"
                 id="user-password"
                 autoComplete="on"
+                data-testid = 'userPassword'
               />
               <label className="sign-in__label visually-hidden" htmlFor="user-password">Password</label>
             </div>
@@ -126,6 +128,7 @@ const SignIn = () => {
               onClick={handleButtonClick}
               className="sign-in__btn"
               type="submit"
+              data-testid = 'signInSubmitButton'
             >Sign in
             </button>
           </div>

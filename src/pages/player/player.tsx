@@ -125,6 +125,7 @@ const Player = () => {
         onDurationChange={handleDurationChange}
         loop={false}
         muted={false}
+        data-testid="videoPlayer"
       />
 
       <button onClick={handleExitClick} type="button" className="player__exit">Exit</button>
@@ -154,7 +155,12 @@ const Player = () => {
         </div>
 
         <div className="player__controls-row">
-          <button onClick={handlePlayClick} type="button" className="player__play">
+          <button
+            onClick={handlePlayClick}
+            type="button"
+            className="player__play"
+            data-testid="buttonPlayPause"
+          >
             {videoIsPlay ?
               <>
                 <svg viewBox="0 0 14 21" width="14" height="21">
@@ -171,7 +177,7 @@ const Player = () => {
               </>
             }
           </button>
-          <div className="player__name">Transpotting</div>
+          <div className="player__name">{filmData.name}</div>
 
           <button onClick={handleFullScreenClick} type="button" className="player__full-screen">
             <svg viewBox="0 0 27 27" width="27" height="27">
