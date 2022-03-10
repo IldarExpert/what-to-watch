@@ -3,7 +3,7 @@ import {ApiRoute, AuthStatus} from '../consts';
 import {FilmDataFromServer} from '../types/film-data-from-server';
 import {Comment} from '../types/comments';
 import {
-  saveAuthErrorMassage,
+  saveAuthErrorMessage,
   saveComments,
   saveFilmData,
   saveOneFilmData,
@@ -111,10 +111,10 @@ export const requireAuthorization = (email: string, password: string): ThunkActi
       setToken(data.token);
       dispatch(saveUserData(convertKeyObj(data)))
       dispatch(updateAuthStatus(AuthStatus.Auth));
-      dispatch(saveAuthErrorMassage(''))
+      dispatch(saveAuthErrorMessage(''))
     } catch (e: any) {
       if (e.response?.status === 400) {
-        dispatch(saveAuthErrorMassage(e.response.data.error))
+        dispatch(saveAuthErrorMessage(e.response.data.error))
       }
 
     } finally {
@@ -174,7 +174,7 @@ export const postReview = (id: string | number, comment : {rating: number, comme
       await api.post(ApiRoute.Comments + '/' + id, comment);
       dispatch(saveReviewError(''));
     } catch (e: any) {
-      dispatch(saveReviewError(e.response.data.error))
+      dispatch(saveReviewError(e.response?.data?.error))
     }
   }
 }

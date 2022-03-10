@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import Footer from '../../components/footer/footer';
 import {useDispatch, useSelector} from 'react-redux';
-import {getFilm, getIsLoading, getSimilarFilms} from '../../store/data-reducer/selectors';
+import {getComments, getFilm, getIsLoading, getSimilarFilms} from '../../store/data-reducer/selectors';
 import {useParams} from 'react-router-dom';
 import {fetchFilm, fetchReviews, fetchSimilarFilms} from '../../store/api-action';
 import Header from '../../components/header/header';
@@ -15,7 +15,7 @@ const MoviePage = () => {
   const isLoading = useSelector(getIsLoading);
   const filmData = useSelector(getFilm);
   const similarFilms = useSelector(getSimilarFilms);
-
+  const comments = useSelector(getComments);
 
   useEffect(() => {
     dispatch(fetchFilm(id));
@@ -57,7 +57,7 @@ const MoviePage = () => {
                    height="327"/>
             </div>
 
-            <FilmCardDescription filmData={filmData}/>
+            <FilmCardDescription filmData={filmData} comments={comments}/>
 
           </div>
         </div>

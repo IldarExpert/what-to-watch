@@ -28,7 +28,7 @@ const Main = () => {
     <>
       <section className="film-card">
         <div className="film-card__bg">
-          <img src={promoFilm.backgroundImage} alt={promoFilm.name}/>
+          <img src={promoFilm.backgroundImage} alt={promoFilm.name + 'backgroundImage'}/>
         </div>
 
         <Header/>
@@ -36,7 +36,7 @@ const Main = () => {
         <div className="film-card__wrap">
           <div className="film-card__info">
             <div className="film-card__poster">
-              <img src={promoFilm.posterImage} alt={promoFilm.name} width="218"
+              <img src={promoFilm.posterImage} alt={promoFilm.name + 'posterImage'} width="218"
                    height="327"/>
             </div>
 

@@ -18,13 +18,13 @@ export const saveComments = createAction<Comment[]>(ActionType.saveComments);
 
 export const savePromo = createAction<FilmData>(ActionType.savePromo);
 
-export const saveReviewError = createAction<string>(ActionType.saveReviewError);
+export const saveReviewError = createAction<string | null>(ActionType.saveReviewError);
 
 
 export const updateAuthStatus = createAction<AuthStatus>(ActionType.updateAuthStatus);
 
 export const saveUserData = createAction<UserInfo>(ActionType.saveUserData);
 
-export const saveAuthErrorMassage = createAction<string>(ActionType.saveAuthErrorMassage);
+export const saveAuthErrorMessage = createAction<string>(ActionType.saveAuthErrorMassage);
 
 export const updateMyList = createAction<FilmData[]>(ActionType.updateMyList)

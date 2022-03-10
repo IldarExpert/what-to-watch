@@ -9,7 +9,7 @@ import {
 } from '../actions';
 import {DataReducerType} from '../../types/store';
 
-const initialState: DataReducerType = {
+export const initialState: DataReducerType = {
   filmList: [{
     "id": 1,
     "name": "The Grand Budapest Hotel",

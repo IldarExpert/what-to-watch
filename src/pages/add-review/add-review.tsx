@@ -6,6 +6,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {getCommentsError, getFilm, getIsLoading} from '../../store/data-reducer/selectors';
 import LoadingScreen from '../../components/loading-screen/loading-screen';
 import {AppRoute} from '../../consts';
+import {saveReviewError} from '../../store/actions';
 
 const AddReview = () => {
   const {id} = useParams();
@@ -41,7 +42,6 @@ const AddReview = () => {
 
   useEffect(() => {
     let reviewCorrect = comment.length > 50 && comment.length <400;
-    console.log(reviewCorrect);
     if (rating && reviewCorrect) {
       setDisableButton(false);
     } else {
@@ -51,6 +51,7 @@ const AddReview = () => {
 
   useEffect(() => {
     if (commentsError === '') {
+      dispatch(saveReviewError(null));
       navigate(AppRoute.OneMoviePage + '/' + id);
     }
   }, [commentsError])

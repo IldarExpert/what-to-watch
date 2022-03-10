@@ -2,16 +2,16 @@ import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import {FilmData} from '../../types/film-data-from-server';
 import Tabs from '../tabs/tabs';
-import {useSelector} from 'react-redux';
-import {getComments} from '../../store/data-reducer/selectors';
+import {Comment} from '../../types/comments';
 
 interface FilmCardDescriptionProps {
   filmData: FilmData,
+  comments: Comment[],
 }
 
-const FilmCardDescription = ({filmData}: FilmCardDescriptionProps) => {
+const FilmCardDescription = ({filmData, comments}: FilmCardDescriptionProps) => {
   const [activeTab, setActiveTab] = useState(0);
-  const comments = useSelector(getComments);
+
 
   return (
     <div className="film-card__desc">

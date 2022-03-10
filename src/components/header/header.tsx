@@ -48,12 +48,12 @@ const Header = () => {
           </ul>
           :
           pathname !== AppRoute.SignIn && <div className="user-block">
-            <Link to={AppRoute.SignIn} className="user-block__link">Sign in</Link>
+            <Link  data-testid="SignInLink" to={AppRoute.SignIn} className="user-block__link">Sign in</Link>
           </div>
       }
       {
         pathname === AppRoute.SignIn ?
-          <h1 className="page-title user-page__title">Sign in</h1>
+          <h1 data-testid="SignInH1" className="page-title user-page__title">Sign in</h1>
           : ''
       }
       {

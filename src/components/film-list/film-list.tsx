@@ -47,6 +47,7 @@ const FilmList = ({filmList}: FilmListProps): JSX.Element => {
       onMouseOver={handleActiveCardEnter}
       onMouseLeave={handleActiveCardLeave}
       className="catalog__films-list"
+      data-testid = 'catalogFilmsList'
     >
       {filmList.map((film) => (
         <SmallFilmCard

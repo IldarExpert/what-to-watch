@@ -1,9 +1,9 @@
 import {createReducer} from '@reduxjs/toolkit';
 import {AuthStatus} from '../../consts';
 import {UserReducerType} from '../../types/store';
-import {saveAuthErrorMassage, saveUserData, updateAuthStatus, updateMyList} from '../actions';
+import {saveAuthErrorMessage, saveUserData, updateAuthStatus, updateMyList} from '../actions';
 
-const initialState: UserReducerType = {
+export const initialState: UserReducerType = {
   authorizationStatus: AuthStatus.Unknown,
   userInfo: {
     "id": 1,
@@ -42,7 +42,7 @@ export const userReducer = createReducer(initialState, (builder) => {
     .addCase(saveUserData, (state, action) => {
       state.userInfo = action.payload;
     })
-    .addCase(saveAuthErrorMassage, (state, action) => {
+    .addCase(saveAuthErrorMessage, (state, action) => {
       state.authErrorMessage = action.payload;
     })
     .addCase(updateMyList, (state, action) => {
